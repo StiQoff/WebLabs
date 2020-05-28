@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Шаблон лабораторной работы</title>
+</head>
+<body>
+
+<script>
+console.log("1-ое задание");
+var num = 2;
+var exp = 10;
+var result = 1;
+var cnt = 1;
+while (cnt <= exp){
+  result = result * num;
+  console.log(result)
+  cnt++;
+};
+console.log("конец 1-го задания");
+</script>
+
+<script>
+console.log("2-ое задание");
+var num=2;
+var exp=10;
+var result = 1;
+for( exp; exp>0; exp=exp-1){
+result = result * num;
+console.log(result);
+};
+console.log("конец 2-го задания");
+</script>
+
+<script>
+console.log("3-е задание");
+let age = prompt("Сколько вам лет?", "Введите свой возраст");
+if (age<=17) {
+console.log("Вам работать еще рано - учитесь");
+} else if (age<=59) {
+console.log("Вам еще работать и работать");
+} else if (age>59) {
+console.log("Вам пора на пенсию");
+};
+console.log("конец 3-го задания");
+</script>
+
+<script>
+console.log("4-е задание");
+for (i = 1; i <= 9; i++) {
+for (t = 20 - 2 * i; t >= 1; t--) {
+document.write('&nbsp;');
+}
+for (n = 1; n <= i; n++) {
+document.write(i);
+}
+document.write('<br>');
+}
+console.log("Пирамидка выведена в документ");
+console.log("конец 4-го задания");
+</script>
+
+<script>
+console.log("5-ое задание");
+chislo = 2;
+switch (chislo) {
+case 1:
+rez = 'зима';
+break;
+case 2:
+rez = 'весна';
+break;
+case 3:
+rez = 'лето';
+break;
+case 4:
+rez = 'осень';
+break;
+}
+console.log(rez);
+console.log("конец 5-го задания");
+</script>
+
+</body>
+</html>
