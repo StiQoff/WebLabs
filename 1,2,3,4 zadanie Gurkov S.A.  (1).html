@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6</title>
+<script type="text/javascript">
+
+//1-oe zadanie
+
+let promise = new Promise((resolve, reject) => {
+let random = Random(10);
+setTimeout(() => {
+if (random >= 1 && random <= 5)
+resolve("result")
+else if (random >= 6 && random <= 10)
+reject("error");
+else {
+console.log("Некорректное число");
+}
+}, random);
+console.log("1-ое задание результат: ", random)
+});
+
+promise.then(
+result => console.log("1-ое задание: result"),
+error => console.log("1-ое задание: error")
+);
+
+function Random(num) {
+return Math.floor(Math.random() * num);
+}
+</script>
+
+
+<script>
+
+//2-oe zadanie
+
+let promise2 = new Promise((resolve, reject) =>
+setTimeout(() => {
+vvod = prompt("Введите число");
+resolve(vvod);
+}, 500)
+);
+
+promise2.then(
+(result) =>
+new Promise((resolve, reject) =>
+setTimeout(() => {
+resolve(Math.pow(result, 2));
+}, 500)
+)
+).then(
+(result) =>
+new Promise((resolve, reject) =>
+setTimeout(() => {
+resolve(Math.pow(result, 2));
+}, 500)
+)
+).then(
+(result) =>
+alert(result)
+);
+</script>
+
+
+
+<script>
+
+//3-e zadanie
+
+function randomch(min, max) {
+return Math.floor(Math.random() * (max - min)) + min;
+};
+
+let array =[
+new Promise(function(resolve, reject){
+let delay = randomch(1, 6);
+setTimeout(() =>{
+resolve(delay);
+}, delay * 500);
+}),
+new Promise(function(resolve, reject){
+let delay = randomch(1, 6);
+setTimeout(() =>{
+resolve(delay);
+}, delay * 500);
+}),
+new Promise(function(resolve, reject){
+let delay = randomch(1, 6);
+setTimeout(() =>{
+resolve(delay);
+}, delay * 500);
+})
+];
+
+function summaarray(arr){
+var sum = 0;
+for(var i = 0; i < arr.length; i++){
+sum += arr[i];
+};
+console.log("Результат 3-го задания: ", sum);
+};
+Promise.all(array).then(results => summaarray(results));
+</script>
+
+
+<script>
+
+//4-oe zadanie
+
+const ranchislo = (max) => {
+return Math.floor(Math.random() * max) + 1;
+}
+
+const getPromise = (maxNumber) => {
+return new Promise( resolve => {
+const num = ranchislo(maxNumber);
+setTimeout( () => {
+resolve(num);
+}, 3500);
+})
+}
+
+const printNumber = async maxNumber => {
+const result = await getPromise(maxNumber);
+console.log("Результат 4-го задания: ", result * result);
+}
+
+printNumber(10)
+</script>
+</head>
+<body>
+</body>
+</html>
