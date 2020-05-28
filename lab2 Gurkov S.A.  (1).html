@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Шаблон лабораторной работы</title>
+</head>
+<body>
+<script>
+console.log("1-ое задание");
+	function pow(x, n) {
+		result = x;
+	for (i = 1; i < n; i++) {
+		result *= x;
+	}
+	return result;
+	}
+	let x = prompt("Введите первое число");
+	console.log("Первое число", x);
+	let n = prompt("Введите второе число");
+	console.log("Второе число", n);
+		if (n < 1) {
+ 	 alert("Введите корректную степень");
+		} else {
+ 	console.log("Результат возведения в степень", pow(x, n) );
+	}
+	console.log("конец 1-го задания");
+</script>
+
+<script>
+console.log("2-ое задание");
+function compare(k){
+return function (y) {
+if(y>k) { return rez=true
+} else { if (y<k) {return rez=false
+} else { if (y == k) { return rez=0
+}
+}
+}
+}
+}
+var result = compare(2);
+console.log(result(3));
+console.log("конец 2-го задания");
+</script>
+
+<script>
+console.log("3-е задание");
+var st = "иногда момент, который ты так долго ждал, приходит в самое неподходящее время...";
+console.log("Заданный текст:");
+console.log(st);
+function strup(st) {
+var arr = st.split(" ");
+for (let i = 0; i < arr.length; i++) {
+arr[i] = ucFirst(arr[i]);
+}
+return st = arr.join(" ");
+}
+function ucFirst(st) {
+return st.slice(0, 1).toUpperCase() + st.slice(1);
+}
+console.log("Результат:");
+console.log(strup(st));
+console.log("конец 3-го задания");
+</script>
+ 
+<script>
+console.log("4-ое задание")
+var book1 = {
+title: "Мастер и Маргарита",
+pubyear: "1967 г.",
+price: "3000 тг.",
+showBook: function() {
+console.log("Название книги: ", book1.title);
+console.log("Цена книги: ", book1.price);
+}
+}
+var book2 = {
+title: "Преступление и наказание",
+pubyear: "1866 г.",
+price: "5000 тг.",
+};
+function showBook() {
+console.log("Название книги: ", book2.title);
+console.log("Цена книги: ", book2.price);
+}
+book2.showBook = function() {
+showBook();
+}
+console.log("Первая книга: ");
+book1.showBook();
+console.log("Вторая книга: ");
+book2.showBook();
+console.log("конец 4-го задания");
+</script>
+
+<script>
+console.log("5-ое задание");
+var a = [5, 12];
+var b = [];
+a[99] = 7;
+var length = a.length;
+var num;
+console.log("For");
+for(var i = 0; i < length; i++){
+num = a[i];
+if(num != null){
+b.push(num * num);
+console.log(b);
+}
+}
+var l = [5, 12];
+var k = [];
+l[99] = 7;
+var num2;
+console.log("For in");
+for (var p in l) { 
+num2 = l[p];
+k.push(num2 * num2);
+console.log(k);
+}
+</script>
+
+<script>
+console.log("6-ое задание");
+let s = 'Мы знаем, что монохромный цвет - это градации серого';
+console.log("Изначальный текст: ");
+console.log(s);
+let txt = 'хром';
+let word;
+temp = s.toUpperCase().indexOf(txt.toUpperCase());
+let spacefound;
+while (temp < s.length) {
+if (s[temp] != ' ') {
+temp++
+}
+if (s[temp] == ' ') {
+spacefound = temp;
+break;
+}
+}
+let space1 = spacefound;
+let space2;
+spacefound--;
+while (spacefound > 0) {
+if (s[spacefound] != ' ') {
+spacefound--;
+}
+if (s[spacefound] == ' ') {
+space2 = spacefound;
+break;
+}
+}
+tempstring = s.substring(space1, space2);
+word = tempstring.slice(1);
+console.log("Конечный результат: ");
+console.log(word);
+console.log("конец 6-го задания");
+</script>
+
+<script>
+console.log("7-ое задание");
+function Book(title, pubYear, price) {
+this.title = title;
+this.pubYear = pubYear;
+this.price = price;
+}
+let book3 = new Book("Преступление и наказание", "1867 г.", 5000);
+let book4 = new Book("Мастер и Маргарита", "1967 г.", 3500);
+Book.prototype.show = function() {
+console.log(this.title);
+console.log(this.pubYear);
+console.log(this.price);
+}
+book3.show();
+book4.show();
+console.log("конец 7-го задания");
+</script>
+
+
+</body>
+</html>
